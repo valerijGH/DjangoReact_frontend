@@ -2,11 +2,11 @@ import api from "../api.js";
 import {useEffect, useState} from "react";
 import Parser from "html-react-parser";
 
-function HomePage() {
+function DemandPage() {
     const [data, setData] = useState([]);
 
     const handleRequest = async () => {
-        const response = await api.get("/api/professions/");
+        const response = await api.get("/api/demand-statistics/");
         return response.data;
     };
 
@@ -23,7 +23,7 @@ function HomePage() {
         <>
             {data.map((item, index) => (
                 <section key={index}>
-                    <h1 className="text-5xl pb-2">{item.name}</h1>
+                    {/*<h1 className="text-5xl pb-2">{item.name}</h1>*/}
                     <p>{Parser(item.description)}</p>
                     <div className="flex mt-3">
                         {item.images.map((image, index) => (
@@ -36,4 +36,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default DemandPage;
