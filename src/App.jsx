@@ -19,9 +19,9 @@ function App() {
       <BrowserRouter>
         <div className="flex">
             <SidebarComponent />
-            <div className="flex-1 ml-64">
+            <div className="flex-1 md:ml-64">
               <HeaderComponent/>
-              <main className="p-8">
+              <main className="p-8 min-h-screen">
 
                   <Routes>
                     <Route path="*" element={<NotFoundPage />}/>
