@@ -15,7 +15,7 @@ function GeneralStatisticsPage() {
             .then(r => {
                 setData(r);
             })
-            .catch(err => console.error("Error fetching data:", err));
+            .catch(err => console.error("Error", err));
     }, []);
 
     return (
@@ -24,7 +24,7 @@ function GeneralStatisticsPage() {
                 <section key={index}>
                     {/*<h1 className="text-5xl pb-2">{item.name}</h1>*/}
                     <p>{Parser(item.description)}</p>
-                    <div className="flex mt-3 justify-center flex-wrap md:flex-nowrap md:justify-normal">
+                    <div className="flex mt-3 justify-center flex-wrap ">
                         {item.images.map((image, index) => (
                             <img className="w-96 mt-4 md:mr-4 md:mt-0" key={index} src={image.image} alt={item.name}/>
                         ))}
